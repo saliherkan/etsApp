@@ -10,15 +10,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="EtsMobileApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="325" height="150"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="170" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="EtsMobileApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="325" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3A-98-hkO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAB-iK-eCl">
-                        <rect key="frame" x="0.0" y="0.0" width="325" height="150"/>
+                        <rect key="frame" x="27" y="10" width="325" height="150"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İsim Soyisim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RI4-qk-na8">
                                 <rect key="frame" x="21" y="16" width="304" height="17"/>
@@ -102,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vOK-cp-QfH" firstAttribute="leading" secondItem="pu1-K4-kHB" secondAttribute="trailing" constant="20" id="29y-Xn-Toa"/>
                             <constraint firstAttribute="trailing" secondItem="ftF-bY-Vn3" secondAttribute="trailing" constant="21" id="2Rp-9J-jLY"/>
@@ -129,25 +133,27 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="dAB-iK-eCl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VUV-K5-u90"/>
-                    <constraint firstAttribute="bottom" secondItem="dAB-iK-eCl" secondAttribute="bottom" id="d2j-PZ-8Dk"/>
-                    <constraint firstItem="dAB-iK-eCl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dWr-mM-eWk"/>
-                    <constraint firstAttribute="trailing" secondItem="dAB-iK-eCl" secondAttribute="trailing" id="lHh-1H-hEr"/>
+                    <constraint firstAttribute="trailing" secondItem="b3A-98-hkO" secondAttribute="trailing" id="IEH-en-wkJ"/>
+                    <constraint firstAttribute="bottom" secondItem="b3A-98-hkO" secondAttribute="bottom" id="Pl7-5y-PAd"/>
+                    <constraint firstItem="dAB-iK-eCl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="27" id="VUV-K5-u90"/>
+                    <constraint firstAttribute="bottom" secondItem="dAB-iK-eCl" secondAttribute="bottom" constant="10" id="d2j-PZ-8Dk"/>
+                    <constraint firstItem="dAB-iK-eCl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="dWr-mM-eWk"/>
+                    <constraint firstAttribute="trailing" secondItem="dAB-iK-eCl" secondAttribute="trailing" constant="23" id="lHh-1H-hEr"/>
+                    <constraint firstItem="b3A-98-hkO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="qGI-Wv-jh3"/>
+                    <constraint firstItem="b3A-98-hkO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wtd-aA-Aeu"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="anaView" destination="dAB-iK-eCl" id="Fqw-wV-HTk"/>
+                <outlet property="disView" destination="b3A-98-hkO" id="mFL-a1-RWj"/>
             </connections>
-            <point key="canvasLocation" x="2.1739130434782612" y="110.49107142857143"/>
+            <point key="canvasLocation" x="38.405797101449281" y="103.79464285714285"/>
         </tableViewCell>
     </objects>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

@@ -23,11 +23,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Kişiler"
-        self.navigationController!.navigationBar.titleTextAttributes = [.font: UIFont(name: "HelveticaNeue-Light", size: 30)!,
-                                                                        .foregroundColor: UIColor.white ]
+        self.navigationController!.navigationBar.titleTextAttributes = [.font: UIFont(name: "HelveticaNeue-Light", size: 30)!, .foregroundColor: UIColor.white ]
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TableViewCell.nib, forCellReuseIdentifier: TableViewCell.identifier)
+        tableView.separatorStyle = .none
         naviBarIconItem()
         transparentNaviBar() //Aşağıda oluşturalan navigationBar özellik fonksiyonu çağrıldı
         searchTextLblView.yuvarla()
@@ -41,10 +43,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
         
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 160
         
     }
+    
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
