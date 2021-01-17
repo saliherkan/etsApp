@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class KisiEkleVC: UIViewController {
+class KisiEkleVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var surNameView: UIView!
     @IBOutlet weak var birthdayDate: UIView!
@@ -22,6 +22,10 @@ class KisiEkleVC: UIViewController {
     var textField : UITextField!
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var noteField: UITextField!
+    @IBOutlet weak var surNameTxt: UITextField!
+    @IBOutlet weak var ePostaTxt: UITextField!
+    @IBOutlet weak var telefonTxt: UITextField!
+    var viewModel: KisiEkleVM = KisiEkleVM()
     
     
     
@@ -32,6 +36,10 @@ class KisiEkleVC: UIViewController {
         self.navigationController!.navigationBar.titleTextAttributes = [.font: UIFont(name: "HelveticaNeue-Light", size: 30)!,
         
                                                                         .foregroundColor: UIColor.white ]
+        nameTxt.delegate = self
+        nameTxt.smartInsertDeleteType = UITextSmartInsertDeleteType.no
+        surNameTxt.delegate = self
+        surNameTxt.smartInsertDeleteType = UITextSmartInsertDeleteType.no
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
@@ -53,6 +61,17 @@ class KisiEkleVC: UIViewController {
         super.viewWillAppear(animated)
         registerKeyboardNotifications()
     }
+    
+    //isim Soyisim Text'leri max 20 karakter olarak belirlendi
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            guard let textFieldText = textField.text,
+                let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                    return false
+            }
+            let substringToReplace = textFieldText[rangeOfTextToReplace]
+            let count = textFieldText.count - substringToReplace.count + string.count
+            return count <= 20
+        }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -116,6 +135,18 @@ class KisiEkleVC: UIViewController {
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
         
         scrollView.endEditing(true)
+    }
+    @IBAction func saveBtnClick(_ sender: Any) {
+        let ad = nameTxt.text
+        let soyad = surNameTxt.text
+        let ePosta = ePostaTxt.text
+        let telefon = telefonTxt.text
+        let dogumTarihi = txtDatePicker.text
+        
+        let kisi = Veri(ad: ad!, soyad: soyad!, dogumTarihi: dogumTarihi!, ePosta: ePosta!, telefon: telefon!, not: "dsaasdasdalksdjlka")
+        viewModel.veriEkle(cek: kisi)
+        
+        
     }
     
     

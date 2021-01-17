@@ -136,6 +136,10 @@
             <connections>
                 <outlet property="anaView" destination="dAB-iK-eCl" id="Fqw-wV-HTk"/>
                 <outlet property="disView" destination="b3A-98-hkO" id="mFL-a1-RWj"/>
+                <outlet property="dogumTarihiLabel" destination="p85-Gw-y6V" id="RI0-zI-1xA"/>
+                <outlet property="ePostaLabel" destination="vOK-cp-QfH" id="pLo-rW-fYf"/>
+                <outlet property="nameLabel" destination="RI4-qk-na8" id="9T9-VM-tAJ"/>
+                <outlet property="telefonLabel" destination="fbo-az-Ncp" id="cbY-Fv-lTX"/>
             </connections>
             <point key="canvasLocation" x="48.550724637681164" y="103.79464285714285"/>
         </tableViewCell>

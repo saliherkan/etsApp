@@ -10,6 +10,10 @@ import UIKit
 class TableViewCell: UITableViewCell {
     @IBOutlet weak var anaView: UIView!
     @IBOutlet weak var disView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dogumTarihiLabel: UILabel!
+    @IBOutlet weak var ePostaLabel: UILabel!
+    @IBOutlet weak var telefonLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,6 +48,13 @@ class TableViewCell: UITableViewCell {
         layer.backgroundColor = UIColor.clear.cgColor;
         layer.fillColor = UIColor.clear.cgColor;
         self.anaView.layer.addSublayer(layer);
+    }
+    func ayarla(ad: String, dogumTarihi: String, ePosta: String, telefon: String ){
+        nameLabel.text = ad
+        dogumTarihiLabel.text = dogumTarihi
+        ePostaLabel.text = ePosta
+        telefonLabel.text = telefon
+        
     }
 
     

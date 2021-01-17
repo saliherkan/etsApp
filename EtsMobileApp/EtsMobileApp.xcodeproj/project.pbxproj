@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA4F66C2326C4E83C48A9005 /* Pods_EtsMobileAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A941F8F8DCE48B7FE2C61C /* Pods_EtsMobileAppTests.framework */; };
+		D18CDA35D7D2AB7495739775 /* Pods_EtsMobileApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D258F01B4BB48C755DB2F99 /* Pods_EtsMobileApp.framework */; };
+		F403BF6725B4518D00F3AFEF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403BF6625B4518D00F3AFEF /* Model.swift */; };
+		F403BF6C25B4526900F3AFEF /* AnaSayfaVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403BF6B25B4526900F3AFEF /* AnaSayfaVM.swift */; };
+		F403BF7B25B467AE00F3AFEF /* KisiEkleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403BF7A25B467AE00F3AFEF /* KisiEkleVM.swift */; };
 		F44C75E225B24C2900E123A8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C75E025B24C2900E123A8 /* TableViewCell.swift */; };
 		F44C75E325B24C2900E123A8 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44C75E125B24C2900E123A8 /* TableViewCell.xib */; };
 		F44C83F225B04D580064FDA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C83F125B04D580064FDA5 /* AppDelegate.swift */; };
@@ -23,6 +28,7 @@
 		F44C844C25B1B56A0064FDA5 /* KisiEkle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44C844B25B1B56A0064FDA5 /* KisiEkle.storyboard */; };
 		F44C845125B1FAE50064FDA5 /* StroyboardInstantiate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C845025B1FAE50064FDA5 /* StroyboardInstantiate.swift */; };
 		F44C845725B21B550064FDA5 /* UIView+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C845625B21B550064FDA5 /* UIView+Extentions.swift */; };
+		FA29982095A87FFA7E5B36A0 /* Pods_EtsMobileApp_EtsMobileAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C042F04AD0F74F11B71D4D63 /* Pods_EtsMobileApp_EtsMobileAppUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +49,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210BF52DB74B112F6CA5F99A /* Pods-EtsMobileAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtsMobileAppTests.release.xcconfig"; path = "Target Support Files/Pods-EtsMobileAppTests/Pods-EtsMobileAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		53E29E13AE66AF4477120C49 /* Pods-EtsMobileAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtsMobileAppTests.debug.xcconfig"; path = "Target Support Files/Pods-EtsMobileAppTests/Pods-EtsMobileAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D258F01B4BB48C755DB2F99 /* Pods_EtsMobileApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EtsMobileApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60A941F8F8DCE48B7FE2C61C /* Pods_EtsMobileAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EtsMobileAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AB0E3B099C36C72963AC6FF /* Pods-EtsMobileApp-EtsMobileAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtsMobileApp-EtsMobileAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-EtsMobileApp-EtsMobileAppUITests/Pods-EtsMobileApp-EtsMobileAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8A5C004B34EC72B7EE2C82EC /* Pods-EtsMobileApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtsMobileApp.debug.xcconfig"; path = "Target Support Files/Pods-EtsMobileApp/Pods-EtsMobileApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A0360D2B82A58C36A2C68D96 /* Pods-EtsMobileApp-EtsMobileAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtsMobileApp-EtsMobileAppUITests.release.xcconfig"; path = "Target Support Files/Pods-EtsMobileApp-EtsMobileAppUITests/Pods-EtsMobileApp-EtsMobileAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C042F04AD0F74F11B71D4D63 /* Pods_EtsMobileApp_EtsMobileAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EtsMobileApp_EtsMobileAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E301D26D7E1423D8577943B9 /* Pods-EtsMobileApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtsMobileApp.release.xcconfig"; path = "Target Support Files/Pods-EtsMobileApp/Pods-EtsMobileApp.release.xcconfig"; sourceTree = "<group>"; };
+		F403BF6625B4518D00F3AFEF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F403BF6B25B4526900F3AFEF /* AnaSayfaVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaSayfaVM.swift; sourceTree = "<group>"; };
+		F403BF7A25B467AE00F3AFEF /* KisiEkleVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiEkleVM.swift; sourceTree = "<group>"; };
 		F44C75E025B24C2900E123A8 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F44C75E125B24C2900E123A8 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		F44C83EE25B04D580064FDA5 /* EtsMobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtsMobileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D18CDA35D7D2AB7495739775 /* Pods_EtsMobileApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4F66C2326C4E83C48A9005 /* Pods_EtsMobileAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +106,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA29982095A87FFA7E5B36A0 /* Pods_EtsMobileApp_EtsMobileAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		743B2D77B1D6E2B608CC0082 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D258F01B4BB48C755DB2F99 /* Pods_EtsMobileApp.framework */,
+				C042F04AD0F74F11B71D4D63 /* Pods_EtsMobileApp_EtsMobileAppUITests.framework */,
+				60A941F8F8DCE48B7FE2C61C /* Pods_EtsMobileAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1399FF6D27E5F0CD582811E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A5C004B34EC72B7EE2C82EC /* Pods-EtsMobileApp.debug.xcconfig */,
+				E301D26D7E1423D8577943B9 /* Pods-EtsMobileApp.release.xcconfig */,
+				6AB0E3B099C36C72963AC6FF /* Pods-EtsMobileApp-EtsMobileAppUITests.debug.xcconfig */,
+				A0360D2B82A58C36A2C68D96 /* Pods-EtsMobileApp-EtsMobileAppUITests.release.xcconfig */,
+				53E29E13AE66AF4477120C49 /* Pods-EtsMobileAppTests.debug.xcconfig */,
+				210BF52DB74B112F6CA5F99A /* Pods-EtsMobileAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F403BF7025B4527200F3AFEF /* AnaSayfa */ = {
+			isa = PBXGroup;
+			children = (
+				F403BF6B25B4526900F3AFEF /* AnaSayfaVM.swift */,
+				F44C83F525B04D580064FDA5 /* ViewController.swift */,
+				F44C83F725B04D580064FDA5 /* Main.storyboard */,
+				F403BF6625B4518D00F3AFEF /* Model.swift */,
+			);
+			path = AnaSayfa;
+			sourceTree = "<group>";
+		};
 		F44C75D425B24BE700E123A8 /* KisilerCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +163,8 @@
 				F44C840725B04D5D0064FDA5 /* EtsMobileAppTests */,
 				F44C841225B04D5D0064FDA5 /* EtsMobileAppUITests */,
 				F44C83EF25B04D580064FDA5 /* Products */,
+				B1399FF6D27E5F0CD582811E /* Pods */,
+				743B2D77B1D6E2B608CC0082 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,13 +181,12 @@
 		F44C83F025B04D580064FDA5 /* EtsMobileApp */ = {
 			isa = PBXGroup;
 			children = (
+				F403BF7025B4527200F3AFEF /* AnaSayfa */,
 				F44C75D425B24BE700E123A8 /* KisilerCell */,
 				F44C845525B21B280064FDA5 /* Extensions */,
 				F44C844525B1B5430064FDA5 /* kisiEkle */,
 				F44C83F125B04D580064FDA5 /* AppDelegate.swift */,
 				F44C83F325B04D580064FDA5 /* SceneDelegate.swift */,
-				F44C83F525B04D580064FDA5 /* ViewController.swift */,
-				F44C83F725B04D580064FDA5 /* Main.storyboard */,
 				F44C83FA25B04D5C0064FDA5 /* Assets.xcassets */,
 				F44C83FC25B04D5C0064FDA5 /* LaunchScreen.storyboard */,
 				F44C83FF25B04D5C0064FDA5 /* Info.plist */,
@@ -164,6 +220,7 @@
 			children = (
 				F44C844625B1B55B0064FDA5 /* KisiEkleVC.swift */,
 				F44C844B25B1B56A0064FDA5 /* KisiEkle.storyboard */,
+				F403BF7A25B467AE00F3AFEF /* KisiEkleVM.swift */,
 			);
 			path = kisiEkle;
 			sourceTree = "<group>";
@@ -183,6 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F44C841825B04D5D0064FDA5 /* Build configuration list for PBXNativeTarget "EtsMobileApp" */;
 			buildPhases = (
+				2CBDB1C6325957B625C726BE /* [CP] Check Pods Manifest.lock */,
 				F44C83EA25B04D580064FDA5 /* Sources */,
 				F44C83EB25B04D580064FDA5 /* Frameworks */,
 				F44C83EC25B04D580064FDA5 /* Resources */,
@@ -200,6 +258,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F44C841B25B04D5D0064FDA5 /* Build configuration list for PBXNativeTarget "EtsMobileAppTests" */;
 			buildPhases = (
+				615AEE2D19E6E5515FD8B997 /* [CP] Check Pods Manifest.lock */,
 				F44C840025B04D5D0064FDA5 /* Sources */,
 				F44C840125B04D5D0064FDA5 /* Frameworks */,
 				F44C840225B04D5D0064FDA5 /* Resources */,
@@ -218,6 +277,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F44C841E25B04D5D0064FDA5 /* Build configuration list for PBXNativeTarget "EtsMobileAppUITests" */;
 			buildPhases = (
+				49F3F320DB9969DF560D2442 /* [CP] Check Pods Manifest.lock */,
 				F44C840B25B04D5D0064FDA5 /* Sources */,
 				F44C840C25B04D5D0064FDA5 /* Frameworks */,
 				F44C840D25B04D5D0064FDA5 /* Resources */,
@@ -304,18 +364,90 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2CBDB1C6325957B625C726BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EtsMobileApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49F3F320DB9969DF560D2442 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EtsMobileApp-EtsMobileAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		615AEE2D19E6E5515FD8B997 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EtsMobileAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F44C83EA25B04D580064FDA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F403BF6C25B4526900F3AFEF /* AnaSayfaVM.swift in Sources */,
 				F44C83F625B04D580064FDA5 /* ViewController.swift in Sources */,
 				F44C75E225B24C2900E123A8 /* TableViewCell.swift in Sources */,
 				F44C845125B1FAE50064FDA5 /* StroyboardInstantiate.swift in Sources */,
 				F44C844725B1B55B0064FDA5 /* KisiEkleVC.swift in Sources */,
 				F44C845725B21B550064FDA5 /* UIView+Extentions.swift in Sources */,
+				F403BF7B25B467AE00F3AFEF /* KisiEkleVM.swift in Sources */,
 				F44C83F225B04D580064FDA5 /* AppDelegate.swift in Sources */,
 				F44C83F425B04D580064FDA5 /* SceneDelegate.swift in Sources */,
+				F403BF6725B4518D00F3AFEF /* Model.swift in Sources */,
 				F44C844025B055820064FDA5 /* CustomerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +621,7 @@
 		};
 		F44C841925B04D5D0064FDA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A5C004B34EC72B7EE2C82EC /* Pods-EtsMobileApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -508,6 +641,7 @@
 		};
 		F44C841A25B04D5D0064FDA5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E301D26D7E1423D8577943B9 /* Pods-EtsMobileApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -527,6 +661,7 @@
 		};
 		F44C841C25B04D5D0064FDA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53E29E13AE66AF4477120C49 /* Pods-EtsMobileAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -549,6 +684,7 @@
 		};
 		F44C841D25B04D5D0064FDA5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 210BF52DB74B112F6CA5F99A /* Pods-EtsMobileAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -571,6 +707,7 @@
 		};
 		F44C841F25B04D5D0064FDA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AB0E3B099C36C72963AC6FF /* Pods-EtsMobileApp-EtsMobileAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -591,6 +728,7 @@
 		};
 		F44C842025B04D5D0064FDA5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0360D2B82A58C36A2C68D96 /* Pods-EtsMobileApp-EtsMobileAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

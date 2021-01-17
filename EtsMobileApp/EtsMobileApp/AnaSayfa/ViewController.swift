@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
    
     
-    
+    var viewModel: AnaSayfaVM = AnaSayfaVM()
     
     
     @IBOutlet weak var searchTextLblView: UIView!
@@ -35,11 +35,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchTextLblView.yuvarla()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.veriler.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
+        let verimiz = viewModel.veriler[indexPath.row]
+        cell.ayarla(ad: verimiz.ad , dogumTarihi: verimiz.dogumTarihi, ePosta: verimiz.ePosta, telefon: verimiz.telefon)
         return cell
         
     }
@@ -52,6 +54,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.veriCek()
+        tableView.reloadData()
         
     }
     

@@ -266,6 +266,9 @@
                                         <state key="normal" title="Kaydet / Güncelle">
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveBtnClick:" destination="QTT-0O-nCz" eventType="touchUpInside" id="y6d-jm-cjI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -296,6 +299,7 @@
                     <connections>
                         <outlet property="birthdayDate" destination="nRi-tq-65t" id="dVp-Ia-jYZ"/>
                         <outlet property="ePostView" destination="TO1-fl-yDs" id="3ZB-GP-W0D"/>
+                        <outlet property="ePostaTxt" destination="Yb8-kS-z1T" id="U96-Li-ioU"/>
                         <outlet property="nameTxt" destination="x1k-K7-md0" id="2VV-nI-PXW"/>
                         <outlet property="nameView" destination="jjs-Ty-k4n" id="Yy8-A1-hEg"/>
                         <outlet property="noteField" destination="ES6-tA-8DM" id="BiN-6B-bGj"/>
@@ -303,7 +307,9 @@
                         <outlet property="phoneView" destination="iPR-ax-gW2" id="8CY-kP-ZxT"/>
                         <outlet property="saveBtn" destination="rKM-Pk-fG9" id="jkk-fR-JkI"/>
                         <outlet property="scrollView" destination="jcx-nU-9xC" id="NjC-dR-jOe"/>
+                        <outlet property="surNameTxt" destination="0rP-Yc-eGz" id="p65-Kp-quM"/>
                         <outlet property="surNameView" destination="0T7-MQ-hbB" id="2I7-3X-sgU"/>
+                        <outlet property="telefonTxt" destination="2i9-1v-nXj" id="88k-fd-YAQ"/>
                         <outlet property="txtDatePicker" destination="3qT-IE-rgA" id="c0R-OP-pGh"/>
                     </connections>
                 </viewController>
