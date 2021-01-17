@@ -25,6 +25,7 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var surNameTxt: UITextField!
     @IBOutlet weak var ePostaTxt: UITextField!
     @IBOutlet weak var telefonTxt: UITextField!
+    @IBOutlet weak var noteTxtView: UITextView!
     var viewModel: KisiEkleVM = KisiEkleVM()
     
     
@@ -43,7 +44,7 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
-        textField = noteField
+        textField = surNameTxt
         scrollView.delegate = self
         datePickers()
         noteView.yuvarla()
@@ -142,8 +143,9 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         let ePosta = ePostaTxt.text
         let telefon = telefonTxt.text
         let dogumTarihi = txtDatePicker.text
+        let note = noteTxtView.text
         
-        let kisi = Veri(ad: ad!, soyad: soyad!, dogumTarihi: dogumTarihi!, ePosta: ePosta!, telefon: telefon!, not: "dsaasdasdalksdjlka")
+        let kisi = Veri(ad: ad!, soyad: soyad!, dogumTarihi: dogumTarihi!, ePosta: ePosta!, telefon: telefon!, not: note ?? "")
         viewModel.veriEkle(cek: kisi)
         
         

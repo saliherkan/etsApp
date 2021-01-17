@@ -41,13 +41,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
         let verimiz = viewModel.veriler[indexPath.row]
-        cell.ayarla(ad: verimiz.ad , dogumTarihi: verimiz.dogumTarihi, ePosta: verimiz.ePosta, telefon: verimiz.telefon)
+        cell.ayarla(veri: verimiz)
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        if viewModel.veriler[indexPath.row].not == "" {
+            return 150
+            
+        }
+        return UITableView.automaticDimension
         
     }
     

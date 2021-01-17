@@ -195,20 +195,22 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ES6-tA-8DM">
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9kg-VX-CTn">
                                                                 <rect key="frame" x="12" y="40" width="374.33333333333331" height="123"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="oiX-jf-2d2" firstAttribute="leading" secondItem="hAa-ql-d6e" secondAttribute="leading" constant="15" id="5sl-wn-7hw"/>
-                                                            <constraint firstItem="ES6-tA-8DM" firstAttribute="leading" secondItem="hAa-ql-d6e" secondAttribute="leading" constant="12" id="OOm-s8-tTv"/>
-                                                            <constraint firstAttribute="bottom" secondItem="ES6-tA-8DM" secondAttribute="bottom" id="XVc-ZZ-BZ8"/>
-                                                            <constraint firstAttribute="trailing" secondItem="ES6-tA-8DM" secondAttribute="trailing" id="box-GH-YpH"/>
+                                                            <constraint firstAttribute="bottom" secondItem="9kg-VX-CTn" secondAttribute="bottom" id="6iL-4m-dJC"/>
+                                                            <constraint firstItem="9kg-VX-CTn" firstAttribute="top" secondItem="hAa-ql-d6e" secondAttribute="top" constant="40" id="gP3-bY-p04"/>
+                                                            <constraint firstItem="9kg-VX-CTn" firstAttribute="leading" secondItem="hAa-ql-d6e" secondAttribute="leading" constant="12" id="icE-Fv-BLK"/>
+                                                            <constraint firstAttribute="trailing" secondItem="9kg-VX-CTn" secondAttribute="trailing" id="nsA-WE-Tqd"/>
                                                             <constraint firstItem="oiX-jf-2d2" firstAttribute="top" secondItem="hAa-ql-d6e" secondAttribute="top" constant="12" id="vbH-9J-pWZ"/>
-                                                            <constraint firstItem="ES6-tA-8DM" firstAttribute="top" secondItem="hAa-ql-d6e" secondAttribute="top" constant="40" id="xRX-hP-knI"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -302,7 +304,7 @@
                         <outlet property="ePostaTxt" destination="Yb8-kS-z1T" id="U96-Li-ioU"/>
                         <outlet property="nameTxt" destination="x1k-K7-md0" id="2VV-nI-PXW"/>
                         <outlet property="nameView" destination="jjs-Ty-k4n" id="Yy8-A1-hEg"/>
-                        <outlet property="noteField" destination="ES6-tA-8DM" id="BiN-6B-bGj"/>
+                        <outlet property="noteTxtView" destination="9kg-VX-CTn" id="Lxs-5X-YF0"/>
                         <outlet property="noteView" destination="hAa-ql-d6e" id="Tjo-eX-R3F"/>
                         <outlet property="phoneView" destination="iPR-ax-gW2" id="8CY-kP-ZxT"/>
                         <outlet property="saveBtn" destination="rKM-Pk-fG9" id="jkk-fR-JkI"/>
@@ -320,6 +322,12 @@
     </scenes>
     <resources>
         <image name="naviCont" width="375" height="200"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
