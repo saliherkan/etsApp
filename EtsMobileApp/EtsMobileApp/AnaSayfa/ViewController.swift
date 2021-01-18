@@ -33,6 +33,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         naviBarIconItem()
         transparentNaviBar() //Aşağıda oluşturalan navigationBar özellik fonksiyonu çağrıldı
         searchTextLblView.yuvarla()
+        
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.veriler.count
@@ -48,7 +50,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if viewModel.veriler[indexPath.row].not == "" {
-            return 150
+            return 170
             
         }
         return UITableView.automaticDimension
@@ -60,6 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewWillAppear(animated)
         viewModel.veriCek()
         tableView.reloadData()
+        
         
     }
     
@@ -81,6 +84,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("Ok")
         let vc = KisiEkleVC.instantiate()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func olumluAlert(){
+        
+            let alert = UIAlertController(title: "Hoş Geldiniz", message: "Kişiler Yükleniyor", preferredStyle: UIAlertController.Style.alert)
+            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) { [weak self] in
+                alert.dismiss(animated: true, completion: nil)
+            }
     }
 
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		F403BF6725B4518D00F3AFEF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403BF6625B4518D00F3AFEF /* Model.swift */; };
 		F403BF6C25B4526900F3AFEF /* AnaSayfaVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403BF6B25B4526900F3AFEF /* AnaSayfaVM.swift */; };
 		F403BF7B25B467AE00F3AFEF /* KisiEkleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403BF7A25B467AE00F3AFEF /* KisiEkleVM.swift */; };
+		F403BF8625B56C9D00F3AFEF /* PaddinhLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403BF8525B56C9D00F3AFEF /* PaddinhLabel.swift */; };
 		F44C75E225B24C2900E123A8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C75E025B24C2900E123A8 /* TableViewCell.swift */; };
 		F44C75E325B24C2900E123A8 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44C75E125B24C2900E123A8 /* TableViewCell.xib */; };
 		F44C83F225B04D580064FDA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C83F125B04D580064FDA5 /* AppDelegate.swift */; };
@@ -61,6 +62,7 @@
 		F403BF6625B4518D00F3AFEF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F403BF6B25B4526900F3AFEF /* AnaSayfaVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaSayfaVM.swift; sourceTree = "<group>"; };
 		F403BF7A25B467AE00F3AFEF /* KisiEkleVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiEkleVM.swift; sourceTree = "<group>"; };
+		F403BF8525B56C9D00F3AFEF /* PaddinhLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddinhLabel.swift; sourceTree = "<group>"; };
 		F44C75E025B24C2900E123A8 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F44C75E125B24C2900E123A8 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		F44C83EE25B04D580064FDA5 /* EtsMobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtsMobileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +195,7 @@
 				F44C843E25B055820064FDA5 /* CustomerCell.swift */,
 				F44C843F25B055820064FDA5 /* CustomerCell.xib */,
 				F44C845025B1FAE50064FDA5 /* StroyboardInstantiate.swift */,
+				F403BF8525B56C9D00F3AFEF /* PaddinhLabel.swift */,
 			);
 			path = EtsMobileApp;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				F403BF7B25B467AE00F3AFEF /* KisiEkleVM.swift in Sources */,
 				F44C83F225B04D580064FDA5 /* AppDelegate.swift in Sources */,
 				F44C83F425B04D580064FDA5 /* SceneDelegate.swift in Sources */,
+				F403BF8625B56C9D00F3AFEF /* PaddinhLabel.swift in Sources */,
 				F403BF6725B4518D00F3AFEF /* Model.swift in Sources */,
 				F44C844025B055820064FDA5 /* CustomerCell.swift in Sources */,
 			);

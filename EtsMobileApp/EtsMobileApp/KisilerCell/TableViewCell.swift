@@ -14,13 +14,15 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var dogumTarihiLabel: UILabel!
     @IBOutlet weak var ePostaLabel: UILabel!
     @IBOutlet weak var telefonLabel: UILabel!
-    @IBOutlet weak var not: UILabel!
+    @IBOutlet weak var not: PaddingLabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         shadowSet()
         dashedLine()
         self.selectionStyle = .none
+        
         
         
         
@@ -39,6 +41,11 @@ class TableViewCell: UITableViewCell {
         not.layer.borderWidth = 1
         not.layer.borderColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
         not.layer.cornerRadius = 8
+        
+        
+        not.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        
+        
     
     }
     //cell içerisinde bulunan dashLine tanımlanıp konumlandırıldı
@@ -55,7 +62,7 @@ class TableViewCell: UITableViewCell {
         self.anaView.layer.addSublayer(layer);
     }
     func ayarla(veri: Veri){
-        nameLabel.text = veri.ad
+        nameLabel.text = veri.ad + " " + veri.soyad
         dogumTarihiLabel.text = veri.dogumTarihi
         ePostaLabel.text = veri.ePosta
         telefonLabel.text = veri.telefon
