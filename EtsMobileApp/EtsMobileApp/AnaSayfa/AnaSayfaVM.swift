@@ -35,5 +35,14 @@ final class AnaSayfaVM {
         }
     }
     
+    func kaydet(gelen: [Veri]){
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(gelen){
+            UserDefaults.standard.set(encoded, forKey: "Kisiler")
+            veriCek()
+        }
+        
+    }
+    
    
 }

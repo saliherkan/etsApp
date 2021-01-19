@@ -66,7 +66,7 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // registerKeyboardNotifications()
+        //registerKeyboardNotifications()
     }
     
     //isim Soyisim Text'leri max 20 karakter olarak belirlendi

@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
     
     
-   
+    
     
     var viewModel: AnaSayfaVM = AnaSayfaVM()
     
@@ -35,7 +35,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         searchTextLblView.yuvarla()
         
         
+        
     }
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.veriler.count
     }
@@ -56,8 +61,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return UITableView.automaticDimension
         
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let sirasi = indexPath.row
+            let count = viewModel.veriler.count - 1
+            var yeniDizi: [Veri] = []
+            if count >= 0{
+                for i in 0...count{
+                    if i != sirasi{
+                        yeniDizi.append(viewModel.veriler[i])
+                        
+                    }
+                }
+            }
+            viewModel.kaydet(gelen: yeniDizi)
+            tableView.reloadData()
+            deleteAlert()
+            
+        }
+    }
     
-   
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.veriCek()
@@ -65,6 +89,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
     }
+    
+    
     
     func transparentNaviBar(){
         //Navigation Bar Backgraund Clear color Yapıldı
@@ -86,15 +112,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func olumluAlert(){
+    func deleteAlert(){
         
-            let alert = UIAlertController(title: "Hoş Geldiniz", message: "Kişiler Yükleniyor", preferredStyle: UIAlertController.Style.alert)
-            self.present(alert, animated: true, completion: nil)
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) { [weak self] in
-                alert.dismiss(animated: true, completion: nil)
-            }
+        let alert = UIAlertController(title: "Lütfen Bekleyin", message: "Kişi Siliniyor", preferredStyle: UIAlertController.Style.alert)
+        self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) { [weak self] in
+            alert.dismiss(animated: true, completion: nil)
+        }
     }
-
+    
 }
 extension ViewController: StoryboardInstantiate {
     static var storyboardType: StoryboardType { return .main }
