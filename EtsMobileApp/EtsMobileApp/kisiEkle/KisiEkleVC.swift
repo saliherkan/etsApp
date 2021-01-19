@@ -32,6 +32,9 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dogumUariLbl: UILabel!
     @IBOutlet weak var ePostaUyariLbl: UILabel!
     @IBOutlet weak var telefonUyariLbl: UILabel!
+    @IBOutlet weak var notTxtField: UITextView!
+    @IBOutlet weak var notUyariLbl: UILabel!
+    
     
     
     
@@ -46,6 +49,8 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         nameTxt.smartInsertDeleteType = UITextSmartInsertDeleteType.no
         surNameTxt.delegate = self
         surNameTxt.smartInsertDeleteType = UITextSmartInsertDeleteType.no
+        telefonTxt.delegate = self
+        telefonTxt.smartInsertDeleteType = UITextSmartInsertDeleteType.no
         
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
@@ -70,16 +75,47 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
     }
     
     //isim Soyisim Text'leri max 20 karakter olarak belirlendi
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let textFieldText = textField.text,
-              let rangeOfTextToReplace = Range(range, in: textFieldText) else {
-            return false
-        }
-        let substringToReplace = textFieldText[rangeOfTextToReplace]
-        let count = textFieldText.count - substringToReplace.count + string.count
-        return count <= 20
-    }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == nameTxt || textField == surNameTxt{
+            do {
+                let regex = try NSRegularExpression(pattern: ".*[^A-Za-z ].*", options: [])
+                if regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil {
+                    return false
+                }
+            }
+            catch {
+                print("ERROR")
+            }
+            guard let textFieldText = textField.text,
+                  let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+            }
+            let substringToReplace = textFieldText[rangeOfTextToReplace]
+            let count = textFieldText.count - substringToReplace.count + string.count
+            return count <= 20
+        }
+        if textField == telefonTxt{
+            do {
+                let regex = try NSRegularExpression(pattern: ".*[^0-9 ].*", options: [])
+                if regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil {
+                    return false
+                }
+            }
+            catch {
+                print("ERROR")
+            }
+            guard let textFieldText = textField.text,
+                  let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+            }
+            let substringToReplace = textFieldText[rangeOfTextToReplace]
+            let count = textFieldText.count - substringToReplace.count + string.count
+            return count <= 10
+        }
+        return true
+        
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.saveBtn.addGradiant()
@@ -177,22 +213,23 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         
     }
     func kontrolEt(){
-        let ad = nameTxt.text
-        let soyad = surNameTxt.text
+        let ad = nameTxt.text?.capitalized
+        let soyad = surNameTxt.text?.capitalized
         let ePosta = ePostaTxt.text
         let telefon = telefonTxt.text
         let dogumTarihi = txtDatePicker.text
-        let note = noteTxtView.text
+        let note = notTxtField.text
         
         let adSonuc = adKontrol()
         let soyadSonuc = soyadKontrol()
         let dogumTarihiSonuc = dogumTarihikontrol()
         let ePostaSonuc = ePostaKontol()
         let telefonSonuc = telefonKontrol()
+        let notSonuc = notKontrol()
         
         
         
-        if adSonuc && soyadSonuc && dogumTarihiSonuc && ePostaSonuc && telefonSonuc {
+        if adSonuc && soyadSonuc && dogumTarihiSonuc && ePostaSonuc && telefonSonuc && notSonuc {
             
             let kisi = Veri(ad: ad!, soyad: soyad!, dogumTarihi: dogumTarihi!, ePosta: ePosta!, telefon: telefon!, not: note ?? "")
             viewModel.veriEkle(cek: kisi)
@@ -272,6 +309,20 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
             phoneView.layer.borderWidth = 1
             phoneView.layer.borderColor = #colorLiteral(red: 0.8156862745, green: 0.007843137255, blue: 0.1058823529, alpha: 1)
             telefonUyariLbl.text = "Hatalı Telefon Örn: 5557778811"
+        }
+        return isValid
+    }
+    
+    func notKontrol () -> Bool{
+        let isValid = (notTxtField.text ?? "").count < 100
+        if isValid{
+            notTxtField.layer.borderWidth = 0
+            notTxtField.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            notUyariLbl.text = ""
+        }else{
+            notTxtField.layer.borderWidth = 1
+            notTxtField.layer.borderColor = #colorLiteral(red: 0.8156862745, green: 0.007843137255, blue: 0.1058823529, alpha: 1)
+            notUyariLbl.text = "Max 100 Karakter"
         }
         return isValid
     }

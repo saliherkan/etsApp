@@ -51,7 +51,7 @@ class TableViewCell: UITableViewCell {
     //cell içerisinde bulunan dashLine tanımlanıp konumlandırıldı
     func dashedLine() {
         let width = UIScreen.main.bounds.width
-        let rect = CGRect.init(origin: CGPoint.init(x: 21, y: 46), size: CGSize.init(width: width - 90, height: 0))//Set Height width as you want
+        let rect = CGRect.init(origin: CGPoint.init(x: 21, y: 46), size: CGSize.init(width: width - 90, height: 0))
         let layer = CAShapeLayer.init()
         let path = UIBezierPath(roundedRect: rect, cornerRadius: 0)
         layer.path = path.cgPath;
@@ -66,7 +66,7 @@ class TableViewCell: UITableViewCell {
         dogumTarihiLabel.text = veri.dogumTarihi
         ePostaLabel.text = veri.ePosta
         telefonLabel.text = veri.telefon
-        not.text = veri.not
+        not.text = veri.not.capitalized
         
     }
 

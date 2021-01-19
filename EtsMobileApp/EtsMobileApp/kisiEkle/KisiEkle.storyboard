@@ -51,9 +51,9 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Zorunlu" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x1k-K7-md0">
-                                                                <rect key="frame" x="15" y="27.666666666666657" width="371.33333333333331" height="21.333333333333329"/>
+                                                                <rect key="frame" x="15" y="32" width="371.33333333333331" height="17"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                         </subviews>
@@ -108,7 +108,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Zorunlu" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3qT-IE-rgA">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Zorunlu " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3qT-IE-rgA">
                                                                 <rect key="frame" x="15" y="30.666666666666686" width="371.33333333333331" height="18.333333333333329"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -166,7 +166,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Zorunlu" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2i9-1v-nXj">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Zorunlu 10 Hane olarak giriniz (5xx)xxx-xx-xx" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2i9-1v-nXj">
                                                                 <rect key="frame" x="15" y="30.666666666666629" width="371.33333333333331" height="18.333333333333329"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -243,10 +243,17 @@
                                                         <color key="textColor" red="1" green="0.0" blue="0.0093617555430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4k-kT-LRe">
+                                                        <rect key="frame" x="30" y="622" width="0.0" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" red="1" green="0.0" blue="0.0093617555430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="MN6-w6-jOu" firstAttribute="top" secondItem="TO1-fl-yDs" secondAttribute="bottom" constant="1" id="2Sh-oy-EA8"/>
+                                                    <constraint firstItem="G4k-kT-LRe" firstAttribute="top" secondItem="hAa-ql-d6e" secondAttribute="bottom" constant="1" id="3x8-Ae-MdO"/>
                                                     <constraint firstItem="Y44-I6-aGW" firstAttribute="top" secondItem="0T7-MQ-hbB" secondAttribute="bottom" constant="1" id="7li-uQ-fuD"/>
                                                     <constraint firstItem="T8e-4i-knY" firstAttribute="leading" secondItem="hwF-2Q-Eh4" secondAttribute="leading" constant="30" id="BRN-gC-cLQ"/>
                                                     <constraint firstItem="jjs-Ty-k4n" firstAttribute="leading" secondItem="hwF-2Q-Eh4" secondAttribute="leading" constant="25" id="CmS-1W-BSC"/>
@@ -271,6 +278,7 @@
                                                     <constraint firstItem="iPR-ax-gW2" firstAttribute="top" secondItem="TO1-fl-yDs" secondAttribute="bottom" constant="30" id="kPA-UN-41b"/>
                                                     <constraint firstItem="T8e-4i-knY" firstAttribute="top" secondItem="nRi-tq-65t" secondAttribute="bottom" constant="1" id="lGZ-Ot-iJD"/>
                                                     <constraint firstAttribute="trailing" secondItem="iPR-ax-gW2" secondAttribute="trailing" constant="25" id="o8h-0X-kCg"/>
+                                                    <constraint firstItem="G4k-kT-LRe" firstAttribute="leading" secondItem="hwF-2Q-Eh4" secondAttribute="leading" constant="30" id="re0-t9-3LY"/>
                                                     <constraint firstItem="jjs-Ty-k4n" firstAttribute="top" secondItem="hwF-2Q-Eh4" secondAttribute="top" constant="33" id="uf0-4F-ctP"/>
                                                     <constraint firstItem="hAa-ql-d6e" firstAttribute="leading" secondItem="hwF-2Q-Eh4" secondAttribute="leading" constant="25" id="xi1-nE-s17"/>
                                                     <constraint firstItem="TO1-fl-yDs" firstAttribute="top" secondItem="nRi-tq-65t" secondAttribute="bottom" constant="24" id="xor-RZ-uYA"/>
@@ -347,7 +355,8 @@
                         <outlet property="nameTxt" destination="x1k-K7-md0" id="2VV-nI-PXW"/>
                         <outlet property="nameUyariLbl" destination="f3A-Ps-fAO" id="r46-y8-3Wh"/>
                         <outlet property="nameView" destination="jjs-Ty-k4n" id="Yy8-A1-hEg"/>
-                        <outlet property="noteTxtView" destination="9kg-VX-CTn" id="Lxs-5X-YF0"/>
+                        <outlet property="notTxtField" destination="9kg-VX-CTn" id="f1Q-yY-Vox"/>
+                        <outlet property="notUyariLbl" destination="G4k-kT-LRe" id="tsf-Ku-AE4"/>
                         <outlet property="noteView" destination="hAa-ql-d6e" id="Tjo-eX-R3F"/>
                         <outlet property="phoneView" destination="iPR-ax-gW2" id="8CY-kP-ZxT"/>
                         <outlet property="saveBtn" destination="rKM-Pk-fG9" id="jkk-fR-JkI"/>
@@ -362,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="st9-x0-5HM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-336.23188405797106" y="2.6785714285714284"/>
+            <point key="canvasLocation" x="-336.44859813084111" y="2.5917926565874732"/>
         </scene>
     </scenes>
     <resources>

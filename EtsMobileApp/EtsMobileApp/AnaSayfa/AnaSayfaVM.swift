@@ -11,6 +11,8 @@ import UIKit
 
 final class AnaSayfaVM {
     var veriler: [Veri]!
+    var filtrelenmisVeriler: [Veri] = []
+    
     init(){
         veriCek()
     }
@@ -21,6 +23,8 @@ final class AnaSayfaVM {
             if let loadedPerson = try? decoder.decode([Veri].self, from: cekilenVeriler) {
                     
                 veriler = loadedPerson
+                veriler.sort(by: {$0.ad < $1.ad})
+                filtrelenmisVeriler = veriler
             }else {
                 veriler = []
             }
@@ -32,6 +36,7 @@ final class AnaSayfaVM {
             }
             
             veriler = olustur
+            filtrelenmisVeriler = olustur
         }
     }
     
