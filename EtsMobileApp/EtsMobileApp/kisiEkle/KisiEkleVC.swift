@@ -38,9 +38,10 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         guncelle()
-        title = "Kişi Ekle"
+        title = viewModel.guncelVeri == nil ? "Kişi Ekle" : "Kişi Güncelle"
+        saveBtn.setTitle(viewModel.guncelVeri == nil ? "Kaydet" : "Güncelle", for: .normal)
         naviBarIconItem()
-        clearDidLoad()
+        setupUI()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +59,7 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func clearDidLoad(){
+    func setupUI(){
         self.navigationController!.navigationBar.titleTextAttributes = [.font: UIFont(name: "HelveticaNeue-Light", size: 30)!, .foregroundColor: UIColor.white ]
         nameTxt.delegate = self
         nameTxt.smartInsertDeleteType = UITextSmartInsertDeleteType.no
@@ -68,14 +69,12 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         telefonTxt.smartInsertDeleteType = UITextSmartInsertDeleteType.no
         ePostaTxt.delegate = self
         ePostaTxt.smartInsertDeleteType = UITextSmartInsertDeleteType.no
-        
         nameTxt.textColor = #colorLiteral(red: 0.1921568627, green: 0.1921568627, blue: 0.1921568627, alpha: 1)
         surNameTxt.textColor = #colorLiteral(red: 0.1921568627, green: 0.1921568627, blue: 0.1921568627, alpha: 1)
         txtDatePicker.textColor = #colorLiteral(red: 0.1921568627, green: 0.1921568627, blue: 0.1921568627, alpha: 1)
         ePostaTxt.textColor = #colorLiteral(red: 0.1921568627, green: 0.1921568627, blue: 0.1921568627, alpha: 1)
         telefonTxt.textColor = #colorLiteral(red: 0.1921568627, green: 0.1921568627, blue: 0.1921568627, alpha: 1)
         notTxtField.textColor = #colorLiteral(red: 0.1921568627, green: 0.1921568627, blue: 0.1921568627, alpha: 1)
-        
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
         textField = notTxtField

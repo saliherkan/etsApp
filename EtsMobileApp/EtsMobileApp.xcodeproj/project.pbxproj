@@ -13,6 +13,8 @@
 		F403BF6C25B4526900F3AFEF /* AnaSayfaVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403BF6B25B4526900F3AFEF /* AnaSayfaVM.swift */; };
 		F403BF7B25B467AE00F3AFEF /* KisiEkleVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403BF7A25B467AE00F3AFEF /* KisiEkleVM.swift */; };
 		F403BF8625B56C9D00F3AFEF /* PaddinhLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F403BF8525B56C9D00F3AFEF /* PaddinhLabel.swift */; };
+		F403BFA825B82F6A00F3AFEF /* Rubik.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F403BFA725B82F6A00F3AFEF /* Rubik.ttf */; };
+		F403BFAD25B8303200F3AFEF /* Rubik in Resources */ = {isa = PBXBuildFile; fileRef = F403BFAC25B8303100F3AFEF /* Rubik */; };
 		F44C75E225B24C2900E123A8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C75E025B24C2900E123A8 /* TableViewCell.swift */; };
 		F44C75E325B24C2900E123A8 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44C75E125B24C2900E123A8 /* TableViewCell.xib */; };
 		F44C83F225B04D580064FDA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C83F125B04D580064FDA5 /* AppDelegate.swift */; };
@@ -63,6 +65,8 @@
 		F403BF6B25B4526900F3AFEF /* AnaSayfaVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnaSayfaVM.swift; sourceTree = "<group>"; };
 		F403BF7A25B467AE00F3AFEF /* KisiEkleVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisiEkleVM.swift; sourceTree = "<group>"; };
 		F403BF8525B56C9D00F3AFEF /* PaddinhLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddinhLabel.swift; sourceTree = "<group>"; };
+		F403BFA725B82F6A00F3AFEF /* Rubik.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rubik.ttf; sourceTree = "<group>"; };
+		F403BFAC25B8303100F3AFEF /* Rubik */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Rubik; sourceTree = "<group>"; };
 		F44C75E025B24C2900E123A8 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F44C75E125B24C2900E123A8 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		F44C83EE25B04D580064FDA5 /* EtsMobileApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtsMobileApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +153,15 @@
 			path = AnaSayfa;
 			sourceTree = "<group>";
 		};
+		F403BF9E25B82D4B00F3AFEF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F403BFA725B82F6A00F3AFEF /* Rubik.ttf */,
+				F403BFAC25B8303100F3AFEF /* Rubik */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F44C75D425B24BE700E123A8 /* KisilerCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +196,7 @@
 		F44C83F025B04D580064FDA5 /* EtsMobileApp */ = {
 			isa = PBXGroup;
 			children = (
+				F403BF9E25B82D4B00F3AFEF /* Fonts */,
 				F403BF7025B4527200F3AFEF /* AnaSayfa */,
 				F44C75D425B24BE700E123A8 /* KisilerCell */,
 				F44C845525B21B280064FDA5 /* Extensions */,
@@ -344,7 +358,9 @@
 			files = (
 				F44C83FE25B04D5C0064FDA5 /* LaunchScreen.storyboard in Resources */,
 				F44C75E325B24C2900E123A8 /* TableViewCell.xib in Resources */,
+				F403BFAD25B8303200F3AFEF /* Rubik in Resources */,
 				F44C83FB25B04D5C0064FDA5 /* Assets.xcassets in Resources */,
+				F403BFA825B82F6A00F3AFEF /* Rubik.ttf in Resources */,
 				F44C844C25B1B56A0064FDA5 /* KisiEkle.storyboard in Resources */,
 				F44C83F925B04D580064FDA5 /* Main.storyboard in Resources */,
 				F44C844125B055820064FDA5 /* CustomerCell.xib in Resources */,
