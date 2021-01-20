@@ -60,7 +60,7 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
     }
     
     func setupUI(){
-        self.navigationController!.navigationBar.titleTextAttributes = [.font: UIFont(name: "HelveticaNeue-Light", size: 30)!, .foregroundColor: UIColor.white ]
+        self.navigationController!.navigationBar.titleTextAttributes = [.font: UIFont(name: "HelveticaNeue-Bold", size: 30)!, .foregroundColor: UIColor.white ]
         nameTxt.delegate = self
         nameTxt.smartInsertDeleteType = UITextSmartInsertDeleteType.no
         surNameTxt.delegate = self

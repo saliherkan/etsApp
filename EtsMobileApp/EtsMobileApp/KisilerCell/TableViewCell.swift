@@ -21,6 +21,8 @@ class TableViewCell: UITableViewCell {
         super.awakeFromNib()
         shadowSet()
         dashedLine()
+        print(nameLabel.font?.familyName, nameLabel.font, nameLabel.font?.fontName)
+
         self.selectionStyle = .none
         
     }

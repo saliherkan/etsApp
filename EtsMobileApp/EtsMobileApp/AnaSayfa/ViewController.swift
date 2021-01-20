@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     func clearDidLoad(){
-        self.navigationController!.navigationBar.titleTextAttributes = [.font: UIFont(name: "HelveticaNeue-Light", size: 30)!, .foregroundColor: UIColor.white ]
+        self.navigationController!.navigationBar.titleTextAttributes = [.font: UIFont(name: "HelveticaNeue-Bold", size: 30)!, .foregroundColor: UIColor.white ]
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TableViewCell.nib, forCellReuseIdentifier: TableViewCell.identifier)
