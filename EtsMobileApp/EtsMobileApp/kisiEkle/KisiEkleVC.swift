@@ -35,17 +35,31 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var notTxtField: UITextView!
     @IBOutlet weak var notUyariLbl: UILabel!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         guncelle()
         title = "Kişi Ekle"
         naviBarIconItem()
-        self.navigationController!.navigationBar.titleTextAttributes = [.font: UIFont(name: "HelveticaNeue-Light", size: 30)!,
-                                                                        
-                                                                        .foregroundColor: UIColor.white ]
+        clearDidLoad()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    func guncelle(){
+        if let veri = viewModel.guncelVeri {
+            nameTxt.text = veri.ad
+            surNameTxt.text = veri.soyad
+            txtDatePicker.text = veri.dogumTarihi
+            ePostaTxt.text = veri.ePosta
+            telefonTxt.text = veri.telefon
+            notTxtField.text = veri.not
+        }
+    }
+    
+    func clearDidLoad(){
+        self.navigationController!.navigationBar.titleTextAttributes = [.font: UIFont(name: "HelveticaNeue-Light", size: 30)!, .foregroundColor: UIColor.white ]
         nameTxt.delegate = self
         nameTxt.smartInsertDeleteType = UITextSmartInsertDeleteType.no
         surNameTxt.delegate = self
@@ -76,20 +90,6 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         phoneView.yuvarla()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    func guncelle(){
-        if let veri = viewModel.guncelVeri {
-            nameTxt.text = veri.ad
-            surNameTxt.text = veri.soyad
-            txtDatePicker.text = veri.dogumTarihi
-            ePostaTxt.text = veri.ePosta
-            telefonTxt.text = veri.telefon
-            notTxtField.text = veri.not
-        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -132,21 +132,21 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         }
         if textField == ePostaTxt{
             do {
-            let regex = try NSRegularExpression(pattern: ".*[^A-Za-z0-9].*", options: [])
-            if regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil {
+                let regex = try NSRegularExpression(pattern: ".*[^A-Za-z0-9@].*", options: [])
+                if regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil {
+                    return false
+                }
+            }
+            catch {
+                print("ERROR")
+            }
+            guard let textFieldText = textField.text,
+                  let rangeOfTextToReplace = Range(range, in: textFieldText) else {
                 return false
             }
-        }
-        catch {
-            print("ERROR")
-        }
-        guard let textFieldText = textField.text,
-              let rangeOfTextToReplace = Range(range, in: textFieldText) else {
-            return false
-        }
-        let substringToReplace = textFieldText[rangeOfTextToReplace]
-        let count = textFieldText.count - substringToReplace.count + string.count
-        return count <= 60
+            let substringToReplace = textFieldText[rangeOfTextToReplace]
+            let count = textFieldText.count - substringToReplace.count + string.count
+            return count <= 60
         }
         return true
         
@@ -184,8 +184,6 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         dateFormatter.dateFormat = "dd MMM yyyy"
         txtDatePicker.text = dateFormatter.string(from: sender.date)
     }
-    
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -199,23 +197,23 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-      guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-      else {
-        return
-      }
-
-      let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
-      scrollView.contentInset = contentInsets
-      scrollView.scrollIndicatorInsets = contentInsets
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+        else {
+            return
+        }
+        
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height , right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
-      let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-          
-      
-      // reset back the content inset to zero after keyboard is gone
-      scrollView.contentInset = contentInsets
-      scrollView.scrollIndicatorInsets = contentInsets
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        
+        
+        // reset back the content inset to zero after keyboard is gone
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
     }
     
     @IBAction func saveBtnClick(_ sender: Any) {
@@ -237,13 +235,13 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
     
     func olumluAlert(){
         
-            let alert = UIAlertController(title: "Başarılı", message: "Kişi Kaydedildi", preferredStyle: UIAlertController.Style.alert)
-            self.present(alert, animated: true, completion: nil)
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) { [weak self] in
-                alert.dismiss(animated: true, completion: nil)
-            }
-            
-            
+        let alert = UIAlertController(title: "Başarılı", message: "Kişi Kaydedildi", preferredStyle: UIAlertController.Style.alert)
+        self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) { [weak self] in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        
+        
         
         
     }
@@ -266,16 +264,12 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         
         if adSonuc && soyadSonuc && dogumTarihiSonuc && ePostaSonuc && telefonSonuc && notSonuc {
             let kisi = Veri(ad: ad!, soyad: soyad!, dogumTarihi: dogumTarihi!, ePosta: ePosta!, telefon: telefon!, not: note ?? "")
-            
-            
             if viewModel.guncelVeri == nil{
                 viewModel.veriEkle(cek: kisi)
                 print("abc")
-                
             }else{
                 viewModel.update(cek: kisi)
             }
-            
             olumluAlert()
             print ("basarılı")
             nameTxt.text = ""
@@ -285,7 +279,6 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
             txtDatePicker.text = ""
             notTxtField.text = ""
         }else {
-            
             olumsuzAlert()
             print("Başarısız")
         }
@@ -380,18 +373,18 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
     
     @objc func adjustForKeyboard(notification: Notification) {
         guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-
+        
         let keyboardScreenEndFrame = keyboardValue.cgRectValue
         let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-
+        
         if notification.name == UIResponder.keyboardWillHideNotification {
             noteTxtView.contentInset = .zero
         } else {
             noteTxtView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
         }
-
+        
         noteTxtView.scrollIndicatorInsets = noteTxtView.contentInset
-
+        
         let selectedRange = noteTxtView.selectedRange
         noteTxtView.scrollRangeToVisible(selectedRange)
     }

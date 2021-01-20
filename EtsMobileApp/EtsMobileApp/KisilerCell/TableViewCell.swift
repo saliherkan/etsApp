@@ -23,13 +23,9 @@ class TableViewCell: UITableViewCell {
         dashedLine()
         self.selectionStyle = .none
         
-        
-        
-        
     }
     
     func shadowSet() {
-        
         //cell'ler arası shadow ayarlandı
         anaView.layer.cornerRadius = 8
         let myColor = #colorLiteral(red: 0.7450980392, green: 0.6862745098, blue: 0.7960784314, alpha: 1)
@@ -41,14 +37,9 @@ class TableViewCell: UITableViewCell {
         not.layer.borderWidth = 1
         not.layer.borderColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
         not.layer.cornerRadius = 8
-        
-        
         not.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
-        
-        
-    
     }
-    //cell içerisinde bulunan dashLine tanımlanıp konumlandırıldı
+    
     func dashedLine() {
         let width = UIScreen.main.bounds.width
         let rect = CGRect.init(origin: CGPoint.init(x: 21, y: 46), size: CGSize.init(width: width - 90, height: 0))
@@ -60,19 +51,17 @@ class TableViewCell: UITableViewCell {
         layer.backgroundColor = UIColor.clear.cgColor;
         layer.fillColor = UIColor.clear.cgColor;
         self.anaView.layer.addSublayer(layer);
+        //cell içerisinde bulunan dashLine tanımlanıp konumlandırıldı
     }
+    
     func ayarla(veri: Veri){
         nameLabel.text = veri.ad + " " + veri.soyad
         dogumTarihiLabel.text = veri.dogumTarihi
         ePostaLabel.text = veri.ePosta
         telefonLabel.text = veri.telefon
         not.text = veri.not.capitalized
-        
     }
-
-    
-    
-}
+  }
 extension TableViewCell {
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)

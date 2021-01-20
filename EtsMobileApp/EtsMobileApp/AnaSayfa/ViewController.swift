@@ -14,9 +14,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var searchTextLblView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-   override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         title = "Kişiler"
+        clearDidLoad()
+        
+        
+    }
+    func clearDidLoad(){
         self.navigationController!.navigationBar.titleTextAttributes = [.font: UIFont(name: "HelveticaNeue-Light", size: 30)!, .foregroundColor: UIColor.white ]
         tableView.delegate = self
         tableView.dataSource = self
@@ -26,7 +31,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         transparentNaviBar()
         searchTextLblView.yuvarla()
         searceText.delegate = self
-   }
+        
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
@@ -47,7 +53,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.reloadData()
         
     }
-    
     
     @objc func longPressed(sender: UILongPressGestureRecognizer) {
         if sender.state == UIGestureRecognizer.State.began {
@@ -128,8 +133,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.reloadData()
         
     }
-    
-    
     
     func transparentNaviBar(){
         //Navigation Bar Backgraund Clear color Yapıldı
