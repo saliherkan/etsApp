@@ -21,7 +21,6 @@ final class AnaSayfaVM {
             let decoder = JSONDecoder()
             
             if let loadedPerson = try? decoder.decode([Veri].self, from: cekilenVeriler) {
-                    
                 veriler = loadedPerson
                 veriler.sort(by: {$0.ad < $1.ad})
                 filtrelenmisVeriler = veriler
@@ -46,8 +45,5 @@ final class AnaSayfaVM {
             UserDefaults.standard.set(encoded, forKey: "Kisiler")
             veriCek()
         }
-        
     }
-    
-   
 }
