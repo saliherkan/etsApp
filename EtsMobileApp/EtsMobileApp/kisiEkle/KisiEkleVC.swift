@@ -178,14 +178,17 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
         
     }
+    
     @objc func handleDatePicker(sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy"
         txtDatePicker.text = dateFormatter.string(from: sender.date)
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
     func registerKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -220,28 +223,21 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         
     }
     
-    
     func olumsuzAlert(){
         let alert = UIAlertController(title: "Dikkat", message: "Bilgileri Kontrol Ediniz", preferredStyle: UIAlertController.Style.alert)
         self.present(alert, animated: true, completion: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) { [weak self] in
             alert.dismiss(animated: true, completion: nil)
         }
-        
-        
     }
     
     
     func olumluAlert(){
-        
         let alert = UIAlertController(title: "Başarılı", message: "Kişi Kaydedildi", preferredStyle: UIAlertController.Style.alert)
         self.present(alert, animated: true, completion: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) { [weak self] in
             alert.dismiss(animated: true, completion: nil)
         }
-        
-        
-        
         
     }
     func kontrolEt(){
@@ -251,16 +247,12 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         let telefon = telefonTxt.text
         let dogumTarihi = txtDatePicker.text
         let note = notTxtField.text
-        
         let adSonuc = adKontrol()
         let soyadSonuc = soyadKontrol()
         let dogumTarihiSonuc = dogumTarihikontrol()
         let ePostaSonuc = ePostaKontol()
         let telefonSonuc = telefonKontrol()
         let notSonuc = notKontrol()
-        
-        
-        
         if adSonuc && soyadSonuc && dogumTarihiSonuc && ePostaSonuc && telefonSonuc && notSonuc {
             let kisi = Veri(ad: ad!, soyad: soyad!, dogumTarihi: dogumTarihi!, ePosta: ePosta!, telefon: telefon!, not: note ?? "")
             if viewModel.guncelVeri == nil{
@@ -366,10 +358,6 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         }
         return isValid
     }
-    
-    
-    
-    
     @objc func adjustForKeyboard(notification: Notification) {
         guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         
@@ -381,17 +369,10 @@ class KisiEkleVC: UIViewController, UITextFieldDelegate {
         } else {
             noteTxtView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
         }
-        
         noteTxtView.scrollIndicatorInsets = noteTxtView.contentInset
-        
         let selectedRange = noteTxtView.selectedRange
         noteTxtView.scrollRangeToVisible(selectedRange)
     }
-    
-    
-    
-    
-    
 }
 extension KisiEkleVC: StoryboardInstantiate {
     static var storyboardType: StoryboardType { return .kisiEkle }
